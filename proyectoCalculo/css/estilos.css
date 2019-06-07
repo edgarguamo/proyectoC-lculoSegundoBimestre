@@ -1,0 +1,19 @@
+aside{
+	width: 20%;
+	height: 100vh;
+	float: left; 
+	background-color:   #000099;
+	position: fixed;
+
+}
+
+aside a{
+	display: block;
+}
+
+main{
+	width: 80%;
+	float: right;
+	padding: 0 20px 0;
+
+}
