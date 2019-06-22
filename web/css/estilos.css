@@ -1,0 +1,38 @@
+
+
+#mynav{
+	position: fixed;
+	background-color: #ccc;
+	width: 100%;
+	z-index: 100;
+}
+h1 {
+  font-size: 40px;
+}
+
+aside{
+	width: 20%;
+	height: 100vh;
+	float: left; 
+	background-color:   #000099;
+	position: fixed;
+
+}
+body img{
+
+  vertical-align: middle;
+  border-style: none;
+  width: 100px;
+
+}
+
+aside a{
+	display: block;
+}
+
+main{
+	width: 80%;
+	float: right;
+	padding: 0 20px 0;
+	/*background-image: url("../imagenes/Fondo.png");*/
+}
