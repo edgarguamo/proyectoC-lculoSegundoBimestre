@@ -16,13 +16,34 @@
     crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
-    <script type="text/javascript">
+	<script type="text/javascript" ></script>
+    <script lenguage="JavaScript" type="text/javascript" shunt.js>
       $(document).ready(function() {
-          $("#boton").click(function() {
-          var num1 = $("#numero1").val();
+
+
+
+
+		  $("#boton").click(function() {
+			  Shunt = new Shunt ('1+2*3/4^5%6');
+			  var resultado = Shunt.parse("2+2");
+
+			  alert(resultado);
+			/*
+          	<!--
+          	var expresion = $("#numero1").val();
+
+          	shunt.create();
+			var expresion = "1+2*3/4^5%6";
+			var resultado = shunt.parse(expresion);
+			console.log(resultado);
+			Shunt = new Shunt ('1+2*3/4^5%6');
+			var resultado = Shunt.parse('1+2*3/4^5%6');
+			   var num1 = $("#numero1").val();
           var num2 = $("#numero2").val();
           alert(parseInt(num1) + parseInt(num2));
+          	-->
+*/
+
         });
       });
       
@@ -68,15 +89,15 @@
   		  <form>
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Número 1</label>
-            <input type="number" class="form-control" id="numero1" placeholder="Ingrese el numero 1">
+            <label for="exampleInputEmail1">Expresion 1</label>
+            <input type="text" class="form-control" id="numero1" placeholder="Ingrese el numero 1">
           </div>
 
           <div class="form-group">
             <label for="exampleInputEmail1">Número 2</label>
             <input type="number" class="form-control" id="numero2" placeholder="Ingrese el numero 1">
           </div>
-          
+
           <a id="boton" href="#" >Calcular</a>
 
         </form>	
