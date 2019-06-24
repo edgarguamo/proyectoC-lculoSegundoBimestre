@@ -177,7 +177,8 @@
         continue; // whitespace
       
       if (!isNaN(token)) {
-        this.tokens.push(prev = new Token(parseFloat(token), T_NUMBER));
+        this.tokens.push(prev = new Token(
+            Float(token), T_NUMBER));
         continue;
       }
       
