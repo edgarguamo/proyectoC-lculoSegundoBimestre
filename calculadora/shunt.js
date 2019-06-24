@@ -25,7 +25,7 @@
  */
 
 (function(fn) {
-  if (typeof define === 'function' && define.amd)
+  if (typeof define === 'function' && defin/e.amd)
     define('shuntjs', fn);
   else if (typeof module !== 'undefined')
     module.exports = fn();
@@ -178,7 +178,7 @@
       
       if (!isNaN(token)) {
         this.tokens.push(prev = new Token(
-            Float(token), T_NUMBER));
+            Number(token), T_NUMBER));
         continue;
       }
       
