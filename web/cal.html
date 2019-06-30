@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+    <!-- Page Title -->
+    <title>Listing &amp; Directory Website Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="css/set1.css">
+    <!-- Swipper Slider -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <!--============================= HEADER =============================-->
+    <div class="dark-bg sticky-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">Regresar</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-menu"></span>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//END HEADER -->
+    <!--============================= BOOKING =============================-->
+    <div>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="images/infinito.gif" class="grid image-link">
+                        <img src="images/infinito.gif" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="images/titulosemana1.png" class="grid image-link">
+                        <img src="images/titulosemana1.png" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="images/semana1t3.png" class="grid image-link">
+                        <img src="images/semana1t3.png"" class="img-fluid" alt="#">
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+    </div>
+    <!--//END BOOKING -->
+    <!--============================= Semana1 titulo =============================-->
+    <section class="reserve-block">
+        <div>
+            <p><h1> CALCULADORA </h1></p>
+        </div>
+    </section>
+   
+    <div class="">
+        <div class="col-md-8" style="background:#efefef;color: black;padding: 3em;">
+          <form>
+
+          <div class="form-group">
+            <label for="numero1">Ingrese el valor de a </label>
+            <input type="number" class="form-control" id="numeroa" placeholder="Valor de a">
+          </div>
+          <select class="form-control" id ="operador1" > 
+              <option value = "+">+</option>
+              <option value = "-">-</option>
+
+          </select>
+
+          <div class="form-group">
+            <label for="numero2">Ingrese el valor de b </label>
+            <input type="number" class="form-control" id="numerob" placeholder="valor de b">
+          </div>
+          <select class="form-control" id ="operador2" > 
+              <option value = "+" >+</option>
+              <option value = "-" >-</option>
+                
+          </select>
+          <div class="form-group">
+            <label for="numero1">Ingrese el valor de c </label>
+            <input type="number" class="form-control" id="numeroc" placeholder="Valor de a">
+          </div>
+          
+          <a id="boton" href="#" >Calcular</a>
+
+        </form> 
+        <p id="resultado" ></p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      $(document).ready(function() {
+          $("#boton").click(function() {
+          console.log("Calculando")
+          var a = parseInt($("#numeroa").val());
+          var b = parseInt($("#numerob").val());
+          var c = parseInt($("#numeroc").val());
+          var operador1 = document.getElementById('operador1').value;   
+          var operador2 = document.getElementById('operador2').value;
+          resultab = 0
+          resultbc = 0
+          if (operador1 == "+") {
+            resultab = a + b
+          } else {
+            resultab = a - b
+          }
+          if (operador2 == "+") {
+            resultbc = resultab + c
+          } else {
+            resultbc = resultab - c
+          }
+          $("#resultado").text(resultbc)
+          
+        });
+      });
+      
+    </script>
+    <footer class="main-block dark-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p> Calculo diferencial &copy; Decide ser mas  <i aria-hidden="true"></i> by <a href="https://www.utpl.edu.ec/" target="_blank">UTPL</a></p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--//END FOOTER -->
+
+
+
+
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Magnific popup JS -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Swipper Slider JS -->
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
+        if ($('.image-link').length) {
+            $('.image-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+        if ($('.image-link2').length) {
+            $('.image-link2').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
