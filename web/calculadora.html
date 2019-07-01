@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+    <!-- Page Title -->
+    <title>Listing &amp; Directory Website Template</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="css/set1.css">
+    <!-- Swipper Slider -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="shunt.js"></script>
+    
+
+
+</head>
+
+<body>
+    <!--============================= HEADER =============================-->
+    <div class="dark-bg sticky-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">Regresar</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="icon-menu"></span>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//END HEADER -->
+    <!--============================= BOOKING =============================-->
+    <div>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+
+                <div class="swiper-slide">
+                    <a href="images/crecientes-y-decrecientes.jpg" class="grid image-link">
+                        <img src="images/crecientes-y-decrecientes.jpg" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="images/fexponencial.jpg" class="grid image-link">
+                        <img src="images/fexponencial.jpg" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="images/graffuncion.jpg" class="grid image-link">
+                        <img src="images/graffuncion.jpg" class="img-fluid" alt="#">
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+    </div>
+    <!--//END BOOKING -->
+    <!--============================= Semana1 titulo =============================-->
+    <section class="reserve-block">
+        <div> 
+            
+            <form id="funcion_cuadratica">
+                <fieldset>
+                    <label for="exampleInputEmail1"><h2><b>FUNCIÓN CUADRÁTICA</b></h2></label>
+                    <br>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino1"> 
+                    
+                    <p><b>X^</b></p> 
+                    <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia1">
+                    <select class="btn btn-dark"" data-toggle="collapse" size="1" style="width: 115px" id ="operador1"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino2">
+                    <p><b>X</b></p>
+                    <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="operador2"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="valor_independiente">
+                    <input type="button" onclick="operacion();" value="Resultado" onclick="tabla">
+                </fieldset>
+            </form>
+            
+            <script type="text/javascript">
+                function operacion (operador1, operador2){
+                    var termino1 = document.getElementById("termino1").value;
+                    var potencia1 = document.getElementById("potencia1").value;
+                    var termino2 = document.getElementById("termino2").value;
+                    var operador1 = document.getElementById("operador1").value;
+                    var operador2 = document.getElementById("operador2").value;
+                    var resultado= 1412;
+                    var resultado_final = 0;
+                    var valor_independiente = document.getElementById("valor_independiente").value;
+                    var min= -4;
+                    var max= 4;
+             
+                    for (i=min;i<=max;i++){
+                        var valor1 = termino1*(Math.pow(i,potencia1));
+                        var valor2 = termino2*i;
+                        switch(operador1){
+                            case ("+"):
+                                resultado = valor1 + valor2;
+                                break;
+                            case ("-"):
+                                resultado = valor1 - valor2;
+                                break;
+                            case("*"):
+                                resultado = valor1 * valor2;
+                                break;
+                            case("/"):
+                                resultado = valor1 / valor2;
+                                break;
+                        }
+                        switch(operador2){
+                            case ("+"):
+                                resultado_final = resultado + valor_independiente;
+                                break;
+                            case ("-"):
+                                resultado_final = resultado - valor_independiente;
+                                break;
+                            case("*"):
+                                resultado_final = resultado * valor_independiente;
+                                break;
+                            case("/"):
+                                resultado_final = resultado / valor_independiente;
+                                break;
+                        }
+                        
+                        document.write(i +" | "+ resultado_final)
+                        document.write("<br />")
+
+                    }
+                }
+                
+            </script>
+            
+            
+        </div>
+    
+    </section>
+    <!--============================= Calculadora Derivadas =============================-->
+    <section class="reserve-block">
+        <div> 
+            
+            <form id="derivada">
+                <fieldset>
+                    <label><h2><b>Derivadas</b></h2></label>
+                    <br>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino3"> 
+                    <p><b>X^</b></p> 
+                    <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia3">
+                    <select class="btn btn-dark"" data-toggle="collapse" size="1" style="width: 115px" id ="signo1"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino4">
+                    <p><b>X^</b></p>
+                    <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia4">
+                    <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="signo2"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="valor_i">
+                    <input type="button" onclick="derivada();" value="Resultado">
+                </fieldset>
+            </form>
+            
+            <script type="text/javascript">
+                function derivada (operador1, operador2){
+                    var termino1 = document.getElementById("termino3").value;
+                    var potencia1 = document.getElementById("potencia3").value;
+                    var potencia2 = document.getElementById("potencia4").value;
+                    var termino2 = document.getElementById("termino4").value;
+                    var operador1 = document.getElementById("signo1").value;
+                    var operador2 = document.getElementById("signo2").value;
+                    var valor_independiente = document.getElementById("valor_i").value;
+                    document.write("Primero se multiplica la base de la incógnita por el exponente.")
+                    document.write("<br />")
+                    document.write(termino1+" * "+potencia1 + " X^" + potencia1+ operador1 + termino2+ "*"+potencia2+"X^"+potencia2+operador2+ valor_independiente);
+                    document.write("<br />")
+                    document.write("Luego se le resta al exponente 1.")
+                    termino2 = termino2 * potencia2;
+                    termino1 = termino1 * potencia1;
+                    document.write("<br />")
+                    document.write( termino1 + "X^(" + potencia1+"-1)" + operador1 + termino2 + "X^("+ potencia2+"-1)"+ operador2+ valor_independiente);
+                    document.write("<br />")
+                    potencia1 = potencia1 - 1;
+                    potencia2 = potencia2 - 1;
+                    document.write("Si existe un término independiente este es eliminado")
+                    document.write("<br />")
+                    document.write( termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2);
+                    
+                }
+                
+            </script>
+            
+            
+        </div>
+    </section>
+    <!--============================= Fin Calculadora Derivadas =============================-->
+    <section class="reserve-block">
+        <table class="table table-bordered table-light" style="width: 500px" id="tabla">
+            <thead>
+              <tr>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>i</td>
+                <td>resultado_final</td>
+              </tr>
+              <tr>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+    <!--//fin semana1 titulo -->
+    <!--
+    <section class="light-bg booking-details_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-m16 responsive-wrap">
+                    <div class="booking-checkbox_wrap">
+                        <div class="booking-checkbox">
+                            <p> En matemáticas, una función exponencial es una función de la forma. 
+                                f(x)=ab^x En el que el argumento x se presenta como un exponente. 
+                                Una función de la forma f(x)=ab^(cx+d) también es una función 
+                                exponencial, ya que puede reescribirse como:
+                            </p>
+                            <img src="images/formula exponencial.PNG"  class="img-fluid" alt="img13" />
+                            <hr>
+                        </div>                       
+                    </div>
+                                                               
+                </div>                        
+            </div>
+        </div>
+
+    </section>
+    END BOOKING DETAILS -->
+    
+    <!--============================= FOOTER =============================-->
+    <footer class="main-block dark-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p> Calculo diferencial &copy; Decide ser mas  <i aria-hidden="true"></i> by <a href="https://www.utpl.edu.ec/" target="_blank">UTPL</a></p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--//END FOOTER -->
+
+
+
+
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Magnific popup JS -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Swipper Slider JS -->
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
+        if ($('.image-link').length) {
+            $('.image-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+        if ($('.image-link2').length) {
+            $('.image-link2').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
