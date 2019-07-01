@@ -180,7 +180,7 @@
     <section class="reserve-block">
         <div> 
             
-            <form id="derivada">
+            <form id="derivada2">
                 <fieldset>
                     <label><h2><b>Derivadas</b></h2></label>
                     <br>
@@ -204,11 +204,14 @@
                         <option value = "/" >/</option>
                     <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="valor_i">
                     <input type="button" onclick="derivada();" value="Resultado">
+
                 </fieldset>
             </form>
+            <div id="derivada"></div>
             
             <script type="text/javascript">
                 function derivada (operador1, operador2){
+                    var resultado;
                     var termino1 = document.getElementById("termino3").value;
                     var potencia1 = document.getElementById("potencia3").value;
                     var potencia2 = document.getElementById("potencia4").value;
@@ -216,21 +219,25 @@
                     var operador1 = document.getElementById("signo1").value;
                     var operador2 = document.getElementById("signo2").value;
                     var valor_independiente = document.getElementById("valor_i").value;
-                    document.write("Primero se multiplica la base de la incógnita por el exponente.")
-                    document.write("<br />")
-                    document.write(termino1+" * "+potencia1 + " X^" + potencia1+ operador1 + termino2+ "*"+potencia2+"X^"+potencia2+operador2+ valor_independiente);
-                    document.write("<br />")
-                    document.write("Luego se le resta al exponente 1.")
+                    resultado = ("<br />");
+                    resultado += ("1. Primero se multiplica la base de la incógnita por el exponente.");
+                    resultado += ("<br />");
+                    resultado += "  -  "+termino1+" * "+potencia1 + " X^" + potencia1+ operador1 + termino2+ "*"+potencia2+"X^"+potencia2+operador2+ valor_independiente;
+                    resultado += ("<br />");
+                    resultado += ("2. Luego se le resta al exponente 1.")
                     termino2 = termino2 * potencia2;
                     termino1 = termino1 * potencia1;
-                    document.write("<br />")
-                    document.write( termino1 + "X^(" + potencia1+"-1)" + operador1 + termino2 + "X^("+ potencia2+"-1)"+ operador2+ valor_independiente);
-                    document.write("<br />")
+                    resultado += ("<br />")
+                    resultado += ( "  -  "+termino1 + "X^(" + potencia1+"-1)" + operador1 + termino2 + "X^("+ potencia2+"-1)"+ operador2+ valor_independiente);
+                    resultado += ("<br />")
                     potencia1 = potencia1 - 1;
                     potencia2 = potencia2 - 1;
-                    document.write("Si existe un término independiente este es eliminado")
-                    document.write("<br />")
-                    document.write( termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2);
+                    resultado += ("Si existe un término independiente este es eliminado")
+                    resultado += ("<br />")
+                    let derivadaCaja = document.querySelector('#derivada');
+                    resultado += termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2;
+                    derivadaCaja.innerHTML= resultado;
+                    //document.write( termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2);
                     
                 }
                 
