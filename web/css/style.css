@@ -49,7 +49,8 @@ p {
   font-size: 18px; }
 
 .main-block {
-  padding: 90px 0; }
+  margin-top: 5%;
+  padding: 40px 0; }
   @media (max-width: 768px) {
     .main-block {
       padding: 45px 0; } }
@@ -508,6 +509,9 @@ p {
    ============================================================== */
 footer {
   position: relative; }
+#container{
+  height: 20px;
+}
 
 .copyright {
   text-align: center; }
@@ -718,8 +722,32 @@ footer {
    BOOKING DETAILS
    ============================================================== */
 .booking-details_wrap {
-  padding: 26px 0; }
+  padding: 26px 0;
+ }
 
+.tabla{
+  
+  background: rgb(131,204,155);
+  background: linear-gradient(90deg, rgba(131,204,155,1) 37%, rgba(56,134,158,1) 94%);
+  margin-top: 5%;
+  padding: 40px 0;
+  padding: 20px;
+  margin-right:  40%;
+}
+.tabla2{
+  float: right;
+  background: black;
+  height: 10;
+ 
+}
+
+
+
+
+
+
+
+ 
 .booking-checkbox_wrap {
   background: #fff;
   text-align: justify;

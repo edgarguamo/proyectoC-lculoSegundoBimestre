@@ -9,6 +9,7 @@
     <meta name="author" content="Colorlib">
     <meta name="description" content="#">
     <meta name="keywords" content="#">
+    <title>CALCULADORA DE DERIVADAS</title>
     <!-- Favicons -->
     <link rel="shortcut icon" href="#">
     <!-- Page Title -->
@@ -29,6 +30,16 @@
     <link rel="stylesheet" href="css/magnific-popup.css">
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <script
+    src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="shunt.js"></script>
+    
+
+
 </head>
 
 <body>
@@ -55,18 +66,18 @@
             <div class="swiper-wrapper">
 
                 <div class="swiper-slide">
-                    <a href="images/infinito.gif" class="grid image-link">
-                        <img src="images/infinito.gif" class="img-fluid" alt="#">
+                    <a href="images/crecientes-y-decrecientes.jpg" class="grid image-link">
+                        <img src="images/crecientes-y-decrecientes.jpg" class="img-fluid" alt="#">
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="images/titulosemana1.png" class="grid image-link">
-                        <img src="images/titulosemana1.png" class="img-fluid" alt="#">
+                    <a href="images/fexponencial.jpg" class="grid image-link">
+                        <img src="images/fexponencial.jpg" class="img-fluid" alt="#">
                     </a>
                 </div>
                 <div class="swiper-slide">
-                    <a href="images/semana1t3.png" class="grid image-link">
-                        <img src="images/semana1t3.png"" class="img-fluid" alt="#">
+                    <a href="images/graffuncion.jpg" class="grid image-link">
+                        <img src="images/graffuncion.jpg" class="img-fluid" alt="#">
                     </a>
                 </div>
             </div>
@@ -80,72 +91,180 @@
     <!--//END BOOKING -->
     <!--============================= Semana1 titulo =============================-->
     <section class="reserve-block">
-        <div>
-            <p><h1> CALCULADORA </h1></p>
+        <div> 
+            
+            <form id="funcion_cuadratica">
+                <fieldset>
+                    <label for="exampleInputEmail1"><h2><b>FUNCIÓN CUADRÁTICA</b></h2></label>
+                    <br>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino1"> 
+                    
+                    <p><b>X^</b></p> 
+                    <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia1">
+                    <select class="btn btn-dark"" data-toggle="collapse" size="1" style="width: 115px" id ="operador1"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino2">
+                    <p><b>X</b></p>
+                    <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="operador2"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="valor_independiente">
+                    <input type="button" onclick="operacion();" value="Resultado" onclick="tabla">
+                </fieldset>
+            </form>
+            
+            <script type="text/javascript">
+                function operacion (operador1, operador2){
+                    var termino1 = document.getElementById("termino1").value;
+                    var potencia1 = document.getElementById("potencia1").value;
+                    var termino2 = document.getElementById("termino2").value;
+                    var operador1 = document.getElementById("operador1").value;
+                    var operador2 = document.getElementById("operador2").value;
+                    var resultado= 1412;
+                    var resultado_final = 0;
+                    var valor_independiente = document.getElementById("valor_independiente").value;
+                    var min= -4;
+                    var max= 4;
+             
+                    for (i=min;i<=max;i++){
+                        var valor1 = termino1*(Math.pow(i,potencia1));
+                        var valor2 = termino2*i;
+                        switch(operador1){
+                            case ("+"):
+                                resultado = valor1 + valor2;
+                                break;
+                            case ("-"):
+                                resultado = valor1 - valor2;
+                                break;
+                            case("*"):
+                                resultado = valor1 * valor2;
+                                break;
+                            case("/"):
+                                resultado = valor1 / valor2;
+                                break;
+                        }
+                        switch(operador2){
+                            case ("+"):
+                                resultado_final = resultado + valor_independiente;
+                                break;
+                            case ("-"):
+                                resultado_final = resultado - valor_independiente;
+                                break;
+                            case("*"):
+                                resultado_final = resultado * valor_independiente;
+                                break;
+                            case("/"):
+                                resultado_final = resultado / valor_independiente;
+                                break;
+                        }
+                        
+                        document.write(i +" | "+ resultado_final)
+                        document.write("<br />")
+
+                    }
+                }
+                
+            </script>
+            
+            
+        </div>
+    
+    </section>
+    <!--============================= Calculadora Derivadas =============================-->
+    <section class="reserve-block">
+        <div> 
+            
+            <form id="derivada2">
+                <fieldset>
+                    <label><h2><b>Derivadas</b></h2></label>
+                    <br>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino3"> 
+                    <p><b>X^</b></p> 
+                    <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia3">
+                    <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="signo1"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino4">
+                    <p><b>X^</b></p>
+                    <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia4">
+                    <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="signo2"> 
+                        <option value = "Operador">Operador</option>
+                        <option value = "+" >+</option>
+                        <option value = "-" >-</option>
+                        <option value = "*" >*</option>
+                        <option value = "/" >/</option>
+                    <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="valor_i">
+                    <input type="button" onclick="derivada();" value="Resultado">
+
+                </fieldset>
+            </form>
+            <div id="derivada"></div>
+            
+            <script type="text/javascript">
+                
+                
+            </script>
+            
+            
         </div>
     </section>
-   
-    <div class="">
-        <div class="col-md-8" style="background:#efefef;color: black;padding: 3em;">
-          <form>
+    <!--============================= Fin Calculadora Derivadas =============================-->
+    <section class="reserve-block">
+        <table class="table table-bordered table-light" style="width: 500px" id="tabla">
+            <thead>
+              <tr>
+                <th scope="col">X</th>
+                <th scope="col">Y</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>i</td>
+                <td>resultado_final</td>
+              </tr>
+              <tr>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+            </tbody>
+          </table>
+    </section>
+    <!--//fin semana1 titulo -->
+    <!--
+    <section class="light-bg booking-details_wrap">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-m16 responsive-wrap">
+                    <div class="booking-checkbox_wrap">
+                        <div class="booking-checkbox">
+                            <p> En matemáticas, una función exponencial es una función de la forma. 
+                                f(x)=ab^x En el que el argumento x se presenta como un exponente. 
+                                Una función de la forma f(x)=ab^(cx+d) también es una función 
+                                exponencial, ya que puede reescribirse como:
+                            </p>
+                            <img src="images/formula exponencial.PNG"  class="img-fluid" alt="img13" />
+                            <hr>
+                        </div>                       
+                    </div>
+                                                               
+                </div>                        
+            </div>
+        </div>
 
-          <div class="form-group">
-            <label for="numero1">Ingrese el valor de a </label>
-            <input type="number" class="form-control" id="numeroa" placeholder="Valor de a">
-          </div>
-          <select class="form-control" id ="operador1" > 
-              <option value = "+">+</option>
-              <option value = "-">-</option>
-
-          </select>
-
-          <div class="form-group">
-            <label for="numero2">Ingrese el valor de b </label>
-            <input type="number" class="form-control" id="numerob" placeholder="valor de b">
-          </div>
-          <select class="form-control" id ="operador2" > 
-              <option value = "+" >+</option>
-              <option value = "-" >-</option>
-                
-          </select>
-          <div class="form-group">
-            <label for="numero1">Ingrese el valor de c </label>
-            <input type="number" class="form-control" id="numeroc" placeholder="Valor de a">
-          </div>
-          
-          <a id="boton" href="#" >Calcular</a>
-
-        </form> 
-        <p id="resultado" ></p>
-      </div>
-    </div>
-    <script type="text/javascript">
-      $(document).ready(function() {
-          $("#boton").click(function() {
-          console.log("Calculando")
-          var a = parseInt($("#numeroa").val());
-          var b = parseInt($("#numerob").val());
-          var c = parseInt($("#numeroc").val());
-          var operador1 = document.getElementById('operador1').value;   
-          var operador2 = document.getElementById('operador2').value;
-          resultab = 0
-          resultbc = 0
-          if (operador1 == "+") {
-            resultab = a + b
-          } else {
-            resultab = a - b
-          }
-          if (operador2 == "+") {
-            resultbc = resultab + c
-          } else {
-            resultbc = resultab - c
-          }
-          $("#resultado").text(resultbc)
-          
-        });
-      });
-      
-    </script>
+    </section>
+    END BOOKING DETAILS -->
+    
+    <!--============================= FOOTER =============================-->
     <footer class="main-block dark-bg">
         <div class="container">
             <div class="row">

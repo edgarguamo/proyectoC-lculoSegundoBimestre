@@ -15,7 +15,7 @@ body {
 
 h1 {
     font-size: 72px;
-    color: #fff;
+    -or: #fff;
     font-weight: 300;
     @media (max-width: 1200px) {
         font-size: 52px;
@@ -624,6 +624,11 @@ p {
         color: #737882;
         text-align: center;
     }
+}
+
+.tabla{
+	background: rgb(1,6,14);
+	background: linear-gradient(90deg, rgba(1,6,14,1) 0%, rgba(19,77,163,1) 88%);
 }
 
 .customer-content-wrap {
