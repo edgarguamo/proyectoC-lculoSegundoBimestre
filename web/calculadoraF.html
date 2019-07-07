@@ -38,7 +38,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="shunt.js"></script>
+    <script type="text/javascript" src="js/shunt.js"></script>
 
 
 
@@ -138,7 +138,7 @@
                 var salidaTabla = '<tr>' +                 // Inicia fila
                     '<th>x</th>' +
                     '<th>f(x)</th>' +
-                    '</tr>';                // Termina fila
+                    '</tr>';                                // Termina fila
 
                 // El usuario ingresa una expresion en formato cadena
                 var expresion = document.getElementById('expresion').value.toLowerCase();
@@ -189,7 +189,7 @@
                 }
 
                 // Rellena la tabla
-                $("#tabla").append(salidaTabla);
+                $("#tabla").html(salidaTabla);
 
                 /*
                 var expresion = document.getElementById('expresion').value;
