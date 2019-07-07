@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Colorlib">
+    <meta name="description" content="#">
+    <meta name="keywords" content="#">
+    <title>CALCULADORA DE FUNCIONES</title>
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="#">
+    <!-- Page Title -->
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,500,700,900" rel="stylesheet">
+    <!-- Simple line Icon -->
+    <link rel="stylesheet" href="css/simple-line-icons.css">
+    <!-- Themify Icon -->
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <!-- Hover Effects -->
+    <link rel="stylesheet" href="css/set1.css">
+    <!-- Swipper Slider -->
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <!-- Magnific Popup CSS -->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+        integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="shunt.js"></script>
+
+
+
+</head>
+
+<body>
+
+    <!--============================= HEADER =============================-->
+    <div class="dark-bg sticky-top">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                        <a class="navbar-brand" href="index.html">Regresar</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                            aria-label="Toggle navigation">
+                            <span class="icon-menu"></span></button>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--//END HEADER -->
+    <!--============================= BOOKING =============================-->
+    <div>
+        <!-- Swiper -->
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <a href="images/images.jpeg" class="grid image-link">
+                        <img src="images/images.jpeg" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="images/fun.jpg" class="grid image-link">
+                        <img src="images/fun.jpg" class="img-fluid" alt="#">
+                    </a>
+                </div>
+                <div class="swiper-slide">
+                    <a href="images/imgcalculad.jpeg" class="grid image-link">
+                        <img src="images/imgcalculad.jpeg" class="img-fluid" alt="#">
+                    </a>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-white"></div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button-white"></div>
+            <div class="swiper-button-prev swiper-button-white"></div>
+        </div>
+    </div>
+    <p>
+    <h2><b><i> CALCULADORA DE FUNCIONES</i></b></h2>
+    </p>
+        <div class="tabla row">
+            <div class="col-md-6">
+                <!-- <form> -->
+                <div class="form-group ">
+                    <!-- El usuario ingresa la funcion -->
+                    
+                    <label for="inputExpression">Expresion:</label>
+                    <input type="text" class="form-control form-control-lg" id="expresion"
+                        placeholder="Ingrese la expresion">
+                </div>
+                <!-- Crear campo de entrada para el rango minimo -->
+                <div class="form-group">
+                    <label for="inputExpression">Rango mínimo:</label>
+                    <input type="text" class="form-control form-control-lg" id="rangoMinimo"
+                        placeholder="Ingrese el rango mínimo:">
+                </div>
+                <!-- Crear campo de entrada para el rango maximo -->
+                <div class="form-group">
+                    <label for="inputExpression">Rango máximo:</label>
+                    <input type="text" class="form-control form-control-lg" id="rangoMaximo"
+                        placeholder="Ingrese el rango máximo:">
+                </div>
+                <button id="btnCalculaValoresX">Calcular Valores de X</button>
+            </div>
+            
+            <div class="col-md-6">
+              <table  class = "tabla2" class="col-md-8" style="width: 40%" border="1" id="tabla">
+              </table>
+            </div>
+          </div>
+
+
+
+
+
+    <script lenguage="JavaScript" type="text/javascript">
+        (() => {
+            let boton = document.getElementById("btnCalculaValoresX");
+            boton.addEventListener('click', () => {
+
+                // Crea una cadena que almacenara los valores de la tabla
+                var salidaTabla = '<tr>' +                 // Inicia fila
+                    '<th>x</th>' +
+                    '<th>f(x)</th>' +
+                    '</tr>';                // Termina fila
+
+                // El usuario ingresa una expresion en formato cadena
+                var expresion = document.getElementById('expresion').value.toLowerCase();
+
+                // Se guarda una copia de esa cadena en una var "expresionOriginal"
+                expresionOriginal = expresion;
+
+                // Se almacena el rango minimo y maximo
+                var rangoMinimo = document.getElementById('rangoMinimo').value;
+                var rangoMaximo = document.getElementById('rangoMaximo').value;
+
+                // Se crea un for que comienza en el valor minimo y llega hasta el valor maximo
+                for (var i = rangoMinimo; i <= rangoMaximo; i++) {
+                    // Se modifica la cadena ingresada sustituyendo las x por el valor de i del for
+                    //if(expresion.contains(""))
+
+                    //  Se evalua que el user haya ingresado una cadena con una x conviertiendo los siguientes casos:
+                    // 2+x*4 => 2+<valor-de-i>*4 contemplando incluso una x sola, como en el caso de 3x+2 que se convertira a => 2*<valor-de-i>+2
+
+                    if (expresion.includes('+x')) {
+                        expresion = expresion.replace("+x", "+" + i);
+                    } else if (expresion.includes('x+')) {
+                        expresion = expresion.replace("x+", i + "+")
+                    } else if (expresion.includes('-x')) {
+                        expresion = expresion.replace("-x", "-" + i);
+                    } else if (expresion.includes('x-')) {
+                        expresion = expresion.replace("x-", i + "-");
+                    } else if (expresion.includes('/x')) {
+                        expresion = expresion.replace("/x", "/" + i);
+                    } else if (expresion.includes('x/')) {
+                        expresion = expresion.replace("x/", i + "/")
+                    } else {
+                        expresion = expresion.replace("x", "*" + i);
+                    }
+
+                    // Se llama a Shunt.parse(<expresion-con-valor-X-sustituido-por-I>)
+                    var resultado = Shunt.parse(expresion);
+
+                    // Se agrega el valor de x y f(x) a la salida
+
+                    salidaTabla += '<tr>' +
+                        '<td>' + i + '</td>' +
+                        '<td>' + resultado + '</td>' +
+                        '</tr>';
+
+                    // Restablecemos la expresion original para tratar el siguente rango
+                    expresion = expresionOriginal;
+                }
+
+                // Rellena la tabla
+                $("#tabla").append(salidaTabla);
+
+                /*
+                var expresion = document.getElementById('expresion').value;
+                console.log(expresion);
+                var resultado = Shunt.parse(expresion);
+                */
+                // alert(resultado);
+            })
+
+            // console.log(#tabla)
+        })();
+    </script>
+
+    <footer class="main-block dark-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p> Calculo diferencial &copy; Decide ser mas <i aria-hidden="true"></i> by <a
+                                href="https://www.utpl.edu.ec/" target="_blank">UTPL</a></p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <ul>
+                            <li><a href="#"><span class="ti-facebook"></span></a></li>
+                            <li><a href="#"><span class="ti-twitter-alt"></span></a></li>
+                            <li><a href="#"><span class="ti-instagram"></span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--//END FOOTER -->
+
+
+
+
+    <!-- jQuery, Bootstrap JS. -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Magnific popup JS -->
+    <script src="js/jquery.magnific-popup.js"></script>
+    <!-- Swipper Slider JS -->
+    <script src="js/swiper.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+            loop: true,
+            loopFillGroupWithBlank: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+    <script>
+        if ($('.image-link').length) {
+            $('.image-link').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+        if ($('.image-link2').length) {
+            $('.image-link2').magnificPopup({
+                type: 'image',
+                gallery: {
+                    enabled: true
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>

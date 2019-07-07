@@ -736,10 +736,12 @@ footer {
 }
 .tabla2{
   float: right;
-  background: black;
+  background: rgb(131,204,155);
+  background: linear-gradient(90deg, rgba(131,204,155,1) 37%, rgba(56,134,158,1) 94%);
   height: 10;
  
 }
+.
 
 
 
