@@ -157,21 +157,31 @@
 
                     //  Se evalua que el user haya ingresado una cadena con una x conviertiendo los siguientes casos:
                     // 2+x*4 => 2+<valor-de-i>*4 contemplando incluso una x sola, como en el caso de 3x+2 que se convertira a => 2*<valor-de-i>+2
-
-                    if (expresion.includes('+x')) {
+                                                                        // Trata:
+                    if (expresion.includes('+x')) {                     // +
                         expresion = expresion.replace("+x", "+" + i);
                     } else if (expresion.includes('x+')) {
                         expresion = expresion.replace("x+", i + "+")
-                    } else if (expresion.includes('-x')) {
+                    } else if (expresion.includes('-x')) {              // -
                         expresion = expresion.replace("-x", "-" + i);
                     } else if (expresion.includes('x-')) {
                         expresion = expresion.replace("x-", i + "-");
-                    } else if (expresion.includes('/x')) {
+                    } else if (expresion.includes('/x')) {              // /
                         expresion = expresion.replace("/x", "/" + i);
                     } else if (expresion.includes('x/')) {
-                        expresion = expresion.replace("x/", i + "/")
+                        expresion = expresion.replace("x/", i + "/")    
+                    } else if (expresion.includes('^x')) {              // ^ 
+                        expresion = expresion.replace("^x", "^" + i);
+                    } else if (expresion.includes('x^')) {
+                        expresion = expresion.replace("x^", i + "^")    
                     } else {
-                        expresion = expresion.replace("x", "*" + i);
+                        if(expresion.charAt(0) == 'x'){                              // Si x esta en la primera posicion
+                             expresion = expresion.replace("x" , i + "*");  
+                        }else if(expresion.charAt(expresion.length - 1) == 'x'){     // Si x esta en la ultima posicion del caracter
+                             expresion = expresion.replace("x", "*" + i);  
+                        }else{                                                       // Si no, significa que esta rodeado de terminos
+                            expresion = expresion.replace("x", "*" + i + "*");       
+                        }
                     }
 
                     // Se llama a Shunt.parse(<expresion-con-valor-X-sustituido-por-I>)
