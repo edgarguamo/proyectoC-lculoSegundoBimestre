@@ -89,7 +89,8 @@
         </div>
     </div>
     <!--//END BOOKING -->
-    <!--============================= Semana1 titulo =============================-->
+    <!--
+    
     <section class="reserve-block">
         <div> 
             
@@ -177,17 +178,19 @@
         </div>
     
     </section>
+    -->
     <!--============================= Calculadora Derivadas =============================-->
     <section class="reserve-block">
         <div> 
-            
             <form id="derivada2">
                 <fieldset>
                     <label><h2><b>Derivadas</b></h2></label>
                     <br>
+                    <!--=============== Petición de datos ===============-->
                     <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino3"> 
                     <p><b>X^</b></p> 
                     <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia3">
+                    <!--=============== Seleccionador de operadores ===============-->
                     <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="signo1"> 
                         <option value = "Operador">Operador</option>
                         <option value = "+" >+</option>
@@ -197,6 +200,7 @@
                     <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="termino4">
                     <p><b>X^</b></p>
                     <input class="btn btn-dark" data-toggle="collapse" type="text" size="1" maxlength="10" id="potencia4">
+                    <!--=============== Seleccionador de operadores ===============-->
                     <select class="btn btn-dark" data-toggle="collapse" size="1" style="width: 115px" id ="signo2"> 
                         <option value = "Operador">Operador</option>
                         <option value = "+" >+</option>
@@ -204,13 +208,15 @@
                         <option value = "*" >*</option>
                         <option value = "/" >/</option>
                     <input type="text" class="btn btn-dark" data-toggle="collapse" size="1" maxlength="10" id="valor_i">
+                    <!--=============== Activación de la funcion derivada ===============-->
                     <input type="button" onclick="derivada();" value="Resultado">
 
                 </fieldset>
             </form>
             <div id="derivada"></div>
-            
+            <!--=============== Función derivada ===============-->
             <script type="text/javascript">
+                // Transformación de datos de Strings a números enteros 
                 function derivada (operador1, operador2){
                     var resultado;
                     var termino1 = document.getElementById("termino3").value;
@@ -220,24 +226,109 @@
                     var operador1 = document.getElementById("signo1").value;
                     var operador2 = document.getElementById("signo2").value;
                     var valor_independiente = document.getElementById("valor_i").value;
-                    resultado = ("<br />");
-                    resultado += ("1. Primero se multiplica la base de la incógnita por el exponente.");
-                    resultado += ("<br />");
-                    resultado += "  -  "+termino1+" * "+potencia1 + " X^" + potencia1+ operador1 + termino2+ "*"+potencia2+"X^"+potencia2+operador2+ valor_independiente;
-                    resultado += ("<br />");
-                    resultado += ("2. Luego se le resta al exponente 1.")
-                    termino2 = termino2 * potencia2;
-                    termino1 = termino1 * potencia1;
-                    resultado += ("<br />")
-                    resultado += ( "  -  "+termino1 + "X^(" + potencia1+"-1)" + operador1 + termino2 + "X^("+ potencia2+"-1)"+ operador2+ valor_independiente);
-                    resultado += ("<br />")
-                    potencia1 = potencia1 - 1;
-                    potencia2 = potencia2 - 1;
-                    resultado += ("Si existe un término independiente este es eliminado")
-                    resultado += ("<br />")
-                    let derivadaCaja = document.querySelector('#derivada');
-                    resultado += termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2;
-                    derivadaCaja.innerHTML= resultado;
+                    // Si el segundo termino es igual a 1 
+                    if(potencia2 == 1){
+                        resultado= ("");
+                        // Para que el texto este en negrita 
+                        resultado += ("<b>");
+                        // Salto de línea
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += ("1. Primero se multiplica la base de la incógnita por el exponente.");
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += termino1+"*"+potencia1 + "X^" + potencia1+ 
+                        "  "+operador1+"    "+ termino2+ "*"+potencia2+"X^"+potencia2+ " "+
+                        operador2 +" "+ valor_independiente;
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += ("2. Luego se le resta al exponente 1.")
+                        termino2 = termino2 * potencia2;
+                        termino1 = termino1 * potencia1;
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += (termino1 + "X^(" + potencia1+"-1)" + operador1 + termino2 + 
+                        "X^("+ potencia2+"-1)"+ operador2+ valor_independiente);
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        potencia1 = potencia1 - 1;
+                        potencia2 = potencia2 - 1;
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += ("3. Si existe un término independiente este es eliminado")
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        let derivadaCaja = document.querySelector('#derivada');
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += termino1 + "X^" + potencia1 + operador1 + termino2;
+                        derivadaCaja.innerHTML= resultado;
+                    }else{ // Si el segundo termino es mayor que 1 
+                        resultado= ("");
+                        // Para que el texto este en negrita 
+                        resultado += ("<b>");
+                        // Salto de línea
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += ("1. Primero se multiplica la base de la incógnita por el exponente.");
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += termino1+" * "+potencia1 + " X^" + potencia1+ 
+                        operador1 + termino2+ "*"+potencia2+"X^"+potencia2+operador2+ valor_independiente;
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += ("2. Luego se le resta al exponente 1.")
+                        termino2 = termino2 * potencia2;
+                        termino1 = termino1 * potencia1;
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += (termino1 + "X^(" + potencia1+"-1)" + operador1 + termino2 + 
+                        "X^("+ potencia2+"-1)"+ operador2+ valor_independiente);
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        potencia1 = potencia1 - 1;
+                        potencia2 = potencia2 - 1;
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += ("3. Si existe un término independiente este es eliminado")
+                        // Salto de línea
+                        resultado += ("<br />");
+                        resultado += ("<br />");
+                        let derivadaCaja = document.querySelector('#derivada');
+                        // Tabs 
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                        resultado += "\t"+ termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2;
+                        derivadaCaja.innerHTML= resultado;
+                    }
+                   
                     //document.write( termino1 + "X^" + potencia1 + operador1 + termino2 + "X^"+ potencia2);
                     
                 }
@@ -248,26 +339,7 @@
         </div>
     </section>
     <!--============================= Fin Calculadora Derivadas =============================-->
-    <section class="reserve-block">
-        <table class="table table-bordered table-light" style="width: 500px" id="tabla">
-            <thead>
-              <tr>
-                <th scope="col">X</th>
-                <th scope="col">Y</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>i</td>
-                <td>resultado_final</td>
-              </tr>
-              <tr>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-            </tbody>
-          </table>
-    </section>
+
     <!--//fin semana1 titulo -->
     <!--
     <section class="light-bg booking-details_wrap">
